@@ -3,19 +3,19 @@
     NSight, RMM, Advanced Monitoring Agent, Uninstall, Remove, Forceful, Windows Service, PowerShell
 
 .SYNOPSIS
-    Forcefully removes the NSight RMM agent software and associated Windows service.
+    Forcefully removes the NSight RMM agent software and associated Windows service after attempting to run uninstallers.
 
 .DESCRIPTION
-    This script combines the actions of terminating related processes, 
-    deleting specific files and directories associated with the NSight RMM 
-    agent software, and deleting the "Advanced Monitoring Agent" Windows service.
+    This script first attempts to run the uninstallers found in the registry for the NSight RMM agent software.
+    If the uninstallers don't complete the removal or don't exist, the script then forcefully terminates related processes,
+    deletes specific files and directories, and removes the "Advanced Monitoring Agent" Windows service.
 
-    Caution: This script forcefully deletes files, terminates processes, and 
-    removes a Windows service. Use with caution and only in environments where 
-    such operations are safe and intended.
+    Caution: This script forcefully deletes files, terminates processes, and removes a Windows service. Use with caution
+    and only in environments where such operations are safe and intended.
 
 .EXAMPLE
     To run this script, execute it from PowerShell with administrative privileges.
+
 
 #>
 
