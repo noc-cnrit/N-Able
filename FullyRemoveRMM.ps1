@@ -13,13 +13,10 @@
     Caution: This script forcefully deletes files, terminates processes, and removes a Windows service. Use with caution
     and only in environments where such operations are safe and intended.
 
-.EXAMPLE
     To run this script, execute it from PowerShell with administrative privileges.
-
-
 #>
 
-function Run-Uninstallers {
+function Invoke-Uninstallers {
     param (
         [string[]]$uninstallerPaths
     )
