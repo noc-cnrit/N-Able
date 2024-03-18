@@ -73,7 +73,7 @@ $uninstallerPaths = @(
 )
 
 # Attempt to run the uninstallers before forceful removal
-Run-Uninstallers -uninstallerPaths $uninstallerPaths
+Invoke-Uninstallers -uninstallerPaths $uninstallerPaths
 
 # Main logic for deleting the service and removing agent directories
 do {
