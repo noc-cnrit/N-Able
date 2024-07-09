@@ -69,7 +69,8 @@ $uninstallerPaths = @(
     "C:\ProgramData\{FE6265DF-9CF3-4C58-8B89-F6D8C0976573}\Agent.exe",
     "C:\PROGRA~2\ADVANC~1\RequestHandlerAgent\unins000.exe",
     "C:\PROGRA~2\ADVANC~1\patchman\unins000.exe",
-    "C:\PROGRA~2\ADVANC~1\FileCacheServiceAgent\unins000.exe"
+    "C:\PROGRA~2\ADVANC~1\FileCacheServiceAgent\unins000.exe",
+    "C:\Program Files (x86)\Take Control Agent\uninstall.exe"
 )
 
 # Attempt to run the uninstallers before forceful removal
