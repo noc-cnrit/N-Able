@@ -16,6 +16,8 @@
     To run this script, execute it from PowerShell with administrative privileges.
 #>
 
+# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
+
 function Invoke-Uninstallers {
     param (
         [string[]]$uninstallerPaths
@@ -70,7 +72,11 @@ $uninstallerPaths = @(
     "C:\PROGRA~2\ADVANC~1\RequestHandlerAgent\unins000.exe",
     "C:\PROGRA~2\ADVANC~1\patchman\unins000.exe",
     "C:\PROGRA~2\ADVANC~1\FileCacheServiceAgent\unins000.exe",
-    "C:\Program Files (x86)\Take Control Agent\uninstall.exe"
+    "'C:\Program Files (x86)\Take Control Agent\BASupSrvcCnfg.exe' /close_all", 
+    "'C:\Program Files (x86)\Take Control Agent\BASupSrvc.exe' /uninstall /silent", 
+    "'C:\Program Files (x86)\Take Control Agent\BASupSrvcUpdater.exe' /uninstall /silent", 
+    "'C:\Program Files (x86)\Take Control Agent\BASupSrvcCnfg.exe' /agent_uninstall_reason LOCAL_UNINSTALL_MANUAL /notify_agent_uninstall"
+    # "C:\Program Files (x86)\Take Control Agent\uninstall.exe"
 )
 
 # Attempt to run the uninstallers before forceful removal
@@ -88,6 +94,7 @@ do {
 
     # Define the paths
     $agentPaths = @(
+        "C:\Program Files (x86)\Take Control Agent",
         "C:\Program Files (x86)\Advanced Monitoring Agent",
         "C:\Program Files (x86)\Advanced Monitoring Agent GP"
     )
@@ -103,3 +110,5 @@ do {
 } while ($null -ne $service)
 
 Write-Host "Service 'Advanced Monitoring Agent' and associated software have been removed successfully."
+
+
