@@ -67,7 +67,7 @@ function Remove-NSightAgent {
 
 # Define the uninstaller paths gleaned from the registry
 $uninstallerPaths = @(
-    # "C:\Program Files\Advanced Monitoring Agent Network Management\unins000.exe",
+    "C:\Program Files\Advanced Monitoring Agent Network Management\unins000.exe",
     "C:\ProgramData\{FE6265DF-9CF3-4C58-8B89-F6D8C0976573}\Agent.exe",
     "C:\PROGRA~2\ADVANC~1\RequestHandlerAgent\unins000.exe",
     "C:\PROGRA~2\ADVANC~1\patchman\unins000.exe",
